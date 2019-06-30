@@ -28,9 +28,15 @@
   display: flex;
   align-items: center;
   width: 700px;
+  min-height: 50px;
+}
+
+.main-menu__list {
+  height: 100%;
 }
 
 .main-menu__item {
+  height: 100%;
   display: inline-block;
   margin-right: 60px;
   &:last-child {
@@ -39,8 +45,16 @@
 }
 
 .main-menu__link {
+  display: flex;
+  align-items: center;
   text-decoration: none;
   color: $white;
+  height: 100%;
+  border-bottom: 3px solid transparent; 
+  &:hover {
+    color: #ff9a00;
+    border-bottom: 3px solid #ff9a00;
+  }
 }
 
 .socials {
@@ -69,4 +83,7 @@
   width: 25px;
   height: 25px;
   fill: #606365;
+  &:hover {
+    fill: #ff9a00;
+  }
 }

@@ -59,6 +59,9 @@
     text-align: center;
     line-height: 50px;
   }
+  &:hover {
+    background-color: #f29400
+  }
 }
 .preview__slider-btn--prev {
   &:before {
@@ -123,9 +126,13 @@
   text-decoration: none;
   padding-left: 40px;
   position: relative;
+  z-index: 5;
   &:before {
     position: absolute;
     left: 0;
     content: svg-load('link.svg', fill= '#4b6fd7', width=20px, height=20px);
+  }
+  &:hover {
+    text-decoration: underline;
   }
 }
