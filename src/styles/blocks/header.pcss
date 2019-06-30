@@ -1,0 +1,72 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: url('~images/content/hero.jpg') no-repeat top center;
+  background-size: 100% 100%;
+  height: 100vh;
+  min-height: 650px;
+  z-index: -2;
+}
+
+.header {
+  padding-top: 53px;
+  padding-left: 28px;
+  padding-right: 30px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+}
+.logo {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  color: $white;
+}
+
+.main-menu {
+  display: flex;
+  align-items: center;
+  width: 700px;
+}
+
+.main-menu__item {
+  display: inline-block;
+  margin-right: 60px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.main-menu__link {
+  text-decoration: none;
+  color: $white;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+}
+
+.socials__item {
+  width: 25px;
+  height: 25px;
+  margin-right: 43px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.socials__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.socials__icon {
+  width: 25px;
+  height: 25px;
+  fill: #606365;
+}

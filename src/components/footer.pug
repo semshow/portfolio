@@ -1,0 +1,16 @@
+footer.footer 
+  .container.container--footer
+    .footer__wrap 
+      p.footer__wrap-year Ⓒ	2019
+      p.footer__wrap-name Александр Дерменжи
+      p.footer__wrap-about Личный сайт веб-разработчика
+    .footer__content
+      include nav
+      .footer__bottom
+        .footer__social
+          p.footer__social-text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+          include social
+          +socials('footer')
+        .footer__cite
+          blockquote.footer__cite-text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+          cite.footer__cite-author Martin Golding

@@ -1,0 +1,95 @@
+.skills {
+  min-height: 1025px;
+  background: url("~images/content/skills.jpg") no-repeat center center;
+  background-size: 100% 100%;
+  padding-top: 149px;
+}
+
+.skills__info {
+  width: 600px;
+  margin: 0 auto 63px;
+}
+
+.skills__title {
+  color: $white;
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 59px;
+}
+
+.skills__data {
+  display: flex;
+}
+.skills__data-hands {
+  margin-bottom: -63px;
+}
+
+.skills__data-title {
+  font-size: 24px;
+  color: $white;
+  font-weight: bold;
+}
+
+.skills__circle-percentage {
+  width: 134px;
+  height: 134px;
+  transform: rotate(-90deg);
+}
+
+.skills__data-circlesrow {
+  width: 675px;
+}
+
+.skills__data-row1 {
+  margin-bottom: 58px;
+}
+
+.skills__data-circle {
+  position: relative;
+  display: inline-block;
+  margin-right: 41px;
+}
+
+.skills__data-circle:last-child {
+  margin-right: 0;
+}
+.skills__circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.skills__circle {
+  fill: transparent;
+  stroke-width: 2px;
+  stroke: $white;
+}
+
+.skills__circle-out {
+  stroke-width: 8px;
+  stroke: #ed8000;
+  stroke-dasharray: 251;
+  stroke-dashoffset: 251;
+  animation: fill 100s linear infinite;
+  animation-play-state: paused;
+}
+
+.skills__circle-inner {
+  stroke-opacity: 0.1;
+}
+
+.skills__circle-text {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+@keyframes fill {
+  from {
+    stroke-dashoffset: 251;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}

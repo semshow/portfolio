@@ -31,10 +31,26 @@ body {
   max-width: 1480px;
   width: 95%;
   // width: 1490px;
-
+  &--work {
+    width: 90%;
+  }
+  &--review {
+    width: 90%
+  }
+  &--footer {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+  }
   @include phones {
     width: 85%;
   }
+}
+
+.container--about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .fullscreen-section {
@@ -72,7 +88,7 @@ p {
   padding: 0;
 }
 
-button[type="button"] {
+button[type='button'] {
   cursor: pointer;
   background-color: transparent;
 }
