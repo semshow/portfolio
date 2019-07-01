@@ -1,8 +1,10 @@
 #Дерменжи Александр Олегович 24.06.19
-#GitHub
+
+##GitHub
 https://github.com/semshow/portfolio
-#GitHub Pages
-https://semshow.github.io/portfolio/
+
+##GitHub Pages
+https://semshow.github.io/portfolio/dist/index.html
 
 
 # Учебный шаблон проекта Portfolio
