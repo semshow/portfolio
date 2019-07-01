@@ -3,7 +3,9 @@ section.review
     h2.review__headline-title Что обо мне говорят
     .review__headline-buttons
       button(type="button").review__btn.review__btn--prev 
+        +icon('arrow-down','review__btn-arrow')
       button(type="button").review__btn.review__btn--next 
+        +icon('arrow-down','review__btn-arrow')
   ul.review__slider 
     - var description = [{photo: "content/kovalchuk.jpg", text: "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!", name : "Ковальчук Дмитрий", position : "Основатель LoftSchool"},{photo: "content/sabantsev.jpg", text: "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах", name: "Дмитрий Сабанцев", position: "Преподователь"}]
     - for (var i = 0; i < description.length; i++)
@@ -15,4 +17,3 @@ section.review
           .review__item-authortext
             p.review__item-authorname #{description[i].name}
             p.review__item-authortitle #{description[i].position}
-    

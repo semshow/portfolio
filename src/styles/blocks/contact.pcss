@@ -9,6 +9,15 @@
   margin-right: 48px;
   position: relative;
 }
+
+.contact__block:hover .contact__name {
+  border-bottom: 2px solid $orange; 
+}
+
+.contact__block:hover .contact__form-icon {
+  fill: $orange;
+  fill-opacity: 1;
+}
 .contact__label-text {
   font-weight: 700;
   padding-left: 45px;
@@ -35,6 +44,7 @@
   border: 0;
   border-bottom: 2px solid $white;
   color: $white;
+  transition: border-color 0.5s;
   &::placeholder {
     color: $white;
     font-size: 18px;
@@ -48,6 +58,8 @@
   bottom: 15px;
   fill: $white;
   fill-opacity: 0.3;
+  transition: fill 0.5s;
+  transition: fill-opacity 0.5s;
 }
 
 .contact__form-icon--textarea {
@@ -65,9 +77,12 @@ textarea.contact__name {
 .contact__btn {
   width: 350px;
   height: 80px;
-  background-color: #ee8600;
+  background-color: $orange;
   color: $white;
   text-transform: uppercase;
   font-weight: 700;
+}
 
+.contact__name:focus {
+    outline: none;
 }

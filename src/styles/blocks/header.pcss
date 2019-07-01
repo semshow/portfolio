@@ -51,9 +51,11 @@
   color: $white;
   height: 100%;
   border-bottom: 3px solid transparent; 
+  transition: color 0.5s;
+  transition: border 0.3s;
   &:hover {
-    color: #ff9a00;
-    border-bottom: 3px solid #ff9a00;
+    color: $orange;
+    border-bottom: 3px solid $orange;
   }
 }
 
@@ -82,8 +84,10 @@
 .socials__icon {
   width: 25px;
   height: 25px;
-  fill: #606365;
+  fill: $white;
+  fill-opacity: 0.5;
+  transition: fill 0.5s;
   &:hover {
-    fill: #ff9a00;
+    fill: $orange;
   }
 }
