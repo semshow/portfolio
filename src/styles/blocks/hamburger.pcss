@@ -39,11 +39,15 @@
   top: 0;
   bottom: 0;
   background-color: $white;
-  width: 324px;
+  width: 40%;
   height: 100%;
-  padding: 65px 44px 0 65px;
+  padding: 5% 5% 0 5%;
   z-index: 100;
   display: none; /*block*/
+  @include phones {
+    width: 100%;
+    padding: 5% 5% 0 15%;
+  }
 }
 
 
@@ -95,6 +99,9 @@
 
 .socials--hamburger {
   width: 70%;
+  @include phones {
+    width: 60%;
+  }
 }
 
 .socials--hamburger .socials__icon {
