@@ -3,12 +3,17 @@
   min-height: 650px;
   background: url('~images/content/about.jpg') no-repeat center center;
   background-size: 100% 100%;
-  padding-top: 76px;
+  padding-top: 10%;
+  padding-bottom: 10%;
 }
 
 .about__face {
   width: 45%;
   padding-left: 5%;
+  @include phones {
+    width: 100%;
+    padding-left: 0;
+  }
 }
 
 .about__face-question {
@@ -16,15 +21,28 @@
 }
 
 .about__face-data {
-  width: 350px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   font-weight: 600;
+  font-size: 16px;
+  @include tablets {
+    font-size: 14px;
+  }
+  @include phones {
+    margin-bottom: 50px;
+  }
 }
 
-.about__right {
-  width: 55%;
-  padding-right: 8%;
+.about__content {
+  width: 50%;
+  @include tablets {
+    width: 50%;
+    padding: 0;
+  }
+  @include phones {
+    width: 100%;
+  }
 }
 .about__face-image {
   width: 200px;
@@ -44,29 +62,36 @@
   object-fit: cover;
 }
 
-.about__right-intro {
+.about__content-intro {
   margin-bottom: 30px;
+
+  @include phones {
+    margin-bottom: 17px;
+  } 
 }
 
-.about__right-name {
+.about__content-name {
   color: $white;
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 38px;
 }
 
-.about__right-info {
+.about__content-info {
   margin-bottom: 105px;
+  @include phones {
+    margin-bottom: 60px;
+  }
 }
 
-.about__right-note {
+.about__content-note {
   font-style: italic;
   margin-left: -30px;
   padding-left: 30px;
   position: relative;
 }
 
-.about__right-note:before {
+.about__content-note:before {
   content: '*';
   color: red;
   font-size: 30px;
