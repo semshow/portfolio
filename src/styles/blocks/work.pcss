@@ -1,21 +1,36 @@
 .work {
   min-height: 790px;
+  padding-top: 152px;
+  @include tablets {
+    padding-top: 120px;
+  }
+  @include phones {
+    padding-top: 100px;
+  }
 }
 
 .work__title {
   font-size: 36px;
   font-weight: bold;
-  padding-top: 152px;
   margin-bottom: 59px;
+  @include phones {
+    width: 85%;
+    margin: 0 auto;
+    margin-bottom: 35px;
+  }
 }
+
 .work__preview {
   display: flex;
   justify-content: space-between;
   position: relative;
+  @include tablets {
+    flex-direction: column;
+  }
 }
 
 .work__preview-img {
-  width: 628px;
+  width: 55%;
   height: 354px;
   position: relative;
   &:after {
@@ -28,22 +43,42 @@
     bottom: 100px;
     right: -20%;
     z-index: -1;
+    @include phones {
+      display: none;
+    }
+  }
+
+  @include tablets {
+    width: 90%;
+    margin-bottom: 60px;
+  }
+  @include phones {
+    width: 100%;
   }
 }
 
 .work__preview-slider {
   display: flex;
   justify-content: flex-start;
-  width: 590px;
+  width: 100%;
   height: 100px;
   position: absolute;
   bottom: 31px;
-  right: -50px;
+  @include phones {
+    display: none;
+  }
 }
 
 .work__preview-buttons {
   width: 50px;
   height: 100px;
+  position: absolute;
+  right: -50px;
+  bottom: 30px;
+  @include phones {
+    right: 0;
+    bottom: 0;
+  }
 }
 
 .preview__slider-btn {
@@ -60,7 +95,7 @@
     line-height: 50px;
   }
   &:hover {
-    background-color: #f29400
+    background-color: #f29400;
   }
 }
 .preview__slider-btn--prev {
@@ -90,11 +125,22 @@
 }
 
 .work__preview-description {
-  width: 355px;
+  width: 35%;
+  @include tablets {
+    width: 100%;
+  }
+  @include phones {
+    width: 85%;
+    margin: 0 auto;
+  }
 }
 
 .work__preview-skills {
   margin-bottom: 50px;
+  display: flex;
+  @include tablets {
+    justify-content: center;
+  }
 }
 .work__preview-skillsitem {
   display: inline-block;
@@ -113,14 +159,40 @@
   line-height: 48px;
   font-weight: bold;
   margin-bottom: 45px;
+
+  @include tablets {
+    text-align: center;
+  }
+  @include phones {
+    text-align: left;
+    margin-bottom: 25px;
+  }
 }
 
 .work__preview-text {
   font-weight: 600;
   margin-bottom: 45px;
+  @include tablets {
+    display: block;
+    width: 75%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
+  @include phones {
+    width: 90%;
+    text-align: left;
+    margin: 0;
+    margin-bottom: 30px;
+  }
 }
 
 .work__preview-link {
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+  margin-bottom: 110px;
   color: #4b6fd7;
   font-weight: bold;
   text-decoration: none;
@@ -134,5 +206,9 @@
   }
   &:hover {
     text-decoration: underline;
+  }
+  @include phones {
+    margin: 0 auto;
+    margin-bottom: 100px;
   }
 }

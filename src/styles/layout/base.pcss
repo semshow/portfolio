@@ -32,8 +32,15 @@ body {
   max-width: 1480px;
   width: 95%;
   // width: 1490px;
+
+  @include phones {
+    width: 85%;
+  }
   &--work {
     width: 90%;
+    @include phones {
+      width: 100%;
+    }
   }
   &--review {
     width: 90%
@@ -43,9 +50,7 @@ body {
     display: flex;
     justify-content: space-between;
   }
-  @include phones {
-    width: 85%;
-  }
+  
 }
 
 .container--about {
