@@ -12,6 +12,11 @@
   width: 634px;
   display: flex;
   justify-content: space-between;
+
+  @include tablets {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .intro__description {
@@ -20,7 +25,11 @@
   font-size: 18px;
   color: $white;
   opacity: 0.4;
+  @include tablets {
+    text-align: center;
+  }
 }
+
 .intro__name {
   width: 411px;
 }
@@ -39,6 +48,9 @@
   display: flex;
   bottom: 7%;
   text-decoration: none;
+  @include tablets {
+    display: none;
+  }
 }
 
 .intro__scroll:hover .intro__scroll-text {
@@ -51,7 +63,7 @@
 .intro__scroll-text {
   color: $white;
   font-size: 18px;
-  transition: color 0.5s; 
+  transition: color 0.5s;
 }
 .intro__scroll-icon {
   width: 30px;
