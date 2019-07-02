@@ -9,7 +9,7 @@
 }
 
 .intro__text {
-  width: 634px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 
@@ -21,17 +21,23 @@
 
 .intro__description {
   text-align: right;
-  width: 162px;
+  width: 35%;
   font-size: 18px;
   color: $white;
   opacity: 0.4;
   @include tablets {
     text-align: center;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  @include phones {
+    font-size: 14px;
   }
 }
 
 .intro__name {
-  width: 411px;
+  width: 60%;
 }
 
 .intro__name-text {
@@ -39,6 +45,14 @@
   font-weight: 800;
   line-height: 1;
   color: $white;
+
+  @include tablets {
+    font-size: 48px;
+    text-align: center;
+  }
+  @include phones {
+    font-size: 36px;
+  }
 }
 
 .intro__scroll {
