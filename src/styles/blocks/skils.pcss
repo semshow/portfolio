@@ -1,13 +1,36 @@
 .skills {
   min-height: 1025px;
-  background: url("~images/content/skills.jpg") no-repeat center center;
+  background: url('~images/content/skills.jpg') no-repeat center center;
   background-size: 100% 100%;
   padding-top: 149px;
+  @include tablets {
+    padding-top: 120px;
+  }
+  @include phones {
+    padding-top: 100px;
+  }
 }
 
 .skills__info {
-  width: 600px;
+  width: 55%;
   margin: 0 auto 63px;
+  @include tablets {
+    width: 100%;
+  }
+}
+
+.skills__info-text {
+  font-size: 16px;
+  @include tablets {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 14px;
+  }
+  @include phones {
+    text-align: left;
+    font-size: 14px;
+  }
 }
 
 .skills__title {
@@ -15,18 +38,48 @@
   font-weight: bold;
   font-size: 30px;
   margin-bottom: 59px;
+  @include tablets {
+    margin: 0 auto;
+    width: 70%;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  @include phones {
+    font-size: 24px;
+    text-align: left;
+  }
 }
 
 .skills__data {
   display: flex;
+  @include tablets {
+    flex-direction: column-reverse;
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 
 .skills__data-graphic {
   width: 700px;
   margin: 0 auto;
+  @include tablets {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 .skills__data-hands {
-  margin-bottom: -63px;
+  margin-left: -140px;
+  @include tablets {
+    margin: 0;
+  }
+}
+
+.skills__data-img {
+  transform: rotate(90deg);
+  @include tablets {
+    margin: 0 auto;
+    transform: rotate(0);
+  }
 }
 
 .skills__data-title {
@@ -34,6 +87,9 @@
   color: $white;
   font-weight: bold;
   margin-bottom: 30px;
+  @include tablets {
+    text-align: center;
+  }
 }
 
 .skills__circle-percentage {
@@ -42,8 +98,12 @@
   transform: rotate(-90deg);
 }
 
-.skills__data-circlesrow {
-  width: 675px;
+.skills__data-circlerow {
+  display: flex;
+  justify-content: center;
+  @media screen and (max-width: 420px) {
+    flex-wrap: wrap;
+  }
 }
 
 .skills__data-row {
@@ -51,9 +111,11 @@
 }
 
 .skills__data-circle {
+  /* width: 20%; */
   position: relative;
-  display: inline-block;
-  margin-right: 41px;
+  display: flex;
+  justify-content: center;
+  margin-right: 2%;
 }
 
 .skills__data-circle:last-child {
@@ -88,6 +150,9 @@
 .skills__circle-text {
   font-size: 18px;
   font-weight: bold;
+  @include tablets {
+    font-size: 16px;
+  }
 }
 
 @keyframes fill {
