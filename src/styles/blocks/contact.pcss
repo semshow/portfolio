@@ -3,11 +3,23 @@
   color: #ffffff;
   font-weight: bold;
   margin-bottom: 90px;
+  @include tablets {
+    font-size: 30px;
+    text-align: center;
+  }
+  @include phones {
+    font-size: 24px;
+    margin-bottom: 55px;
+  }
 }
 .contact__block {
   width: 405px;
   margin-right: 48px;
   position: relative;
+  @include phones {
+    width: 100%;
+    margin-bottom: 38px;
+  }
 }
 
 .contact__block:hover .contact__name {
@@ -30,6 +42,10 @@
 .contact__form-header {
   display: flex;
   margin-bottom: 20px;
+  @include phones {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
 }
 
 .contact__form-footer {
@@ -49,8 +65,12 @@
     color: $white;
     font-size: 18px;
     font-weight: 700;
+    @include tablets {
+      font-size: 14px;
+    }
   }
 }
+
 .contact__form-icon {
   position: absolute;
   width: 35px;
@@ -67,20 +87,29 @@
 }
 
 textarea.contact__name {
-  width: 860px;
   height: 85px;
   resize: none;
   font-weight: 700;
   line-height: 36px;
+  @include phones {
+    height: 120px;
+  }
 }
 
 .contact__btn {
+  display: block;
   width: 350px;
   height: 80px;
   background-color: $orange;
   color: $white;
   text-transform: uppercase;
   font-weight: 700;
+  @include tablets {
+    margin: 0 auto;
+  }
+  @include phones {
+    width: 100%;
+  }
 }
 
 .contact__name:focus {

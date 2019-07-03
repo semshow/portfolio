@@ -37,12 +37,33 @@
     display: none;
   }
 }
+.main-menu--footer {
+  width: 100%;
+  @include tablets {
+    margin-bottom: 55px;
+  }
+}
+
+.main-menu--footer .main-menu__item {
+  @include tablets {
+    margin-right: 75px;
+    margin-bottom: 25px;
+  }
+}
+.main-menu--footer .main-menu__list {
+  @include tablets {
+    flex-wrap: wrap;
+  }
+}
 
 .main-menu__list {
   display: flex;
   justify-content: space-around;
   width: 100%;
   height: 100%;
+  @include tablets {
+    justify-content: flex-start;
+  }
 }
 
 .main-menu__item {

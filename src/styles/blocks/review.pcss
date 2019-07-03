@@ -31,22 +31,40 @@
   display: flex;
   justify-content: flex-start;
   margin-bottom: 100px;
-  @include phones {
+  @media screen and (max-width: 640px) {
     flex-direction: column;
     align-items: center;
     margin-bottom: 30px;
   }
 }
 
+.review__headline-buttons {
+  width: 30%;
+  @include tablets {
+    width: 30%;
+  }
+  @media screen and (max-width: 640px) {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
 .review__headline-title {
+  text-align: center;
   font-size: 36px;
   color: $white;
   font-weight: bold;
-  margin-right: 95px;
+  margin-right: 90px;
   @include tablets {
     font-size: 30px;
+    margin-right: 70px;
+    width: 50%;
   }
-  @include phones {
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
     margin-right: 0;
     font-size: 24px;
     margin-bottom: 30px;
@@ -96,7 +114,6 @@
 }
 
 .review__slider {
-  width: 540px;
   display: flex;
   justify-content: space-around;
   @include phones {
@@ -127,6 +144,7 @@
   border-radius: 50%;
   overflow: hidden;
   margin-right: 30px;
+  flex-shrink: 0;
 }
 .review__item-pic {
   width: 100%;
@@ -142,7 +160,7 @@
 }
 
 .review__item-authorname {
-  line-height: 48px;
+  margin-bottom: 16px;
 }
 
 .review__item-authortitle {
