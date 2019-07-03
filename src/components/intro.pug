@@ -1,4 +1,10 @@
 section.intro
+  .intro__parallax
+    .parallax__layer(data-speed="0.2")
+      +image('content/parallax_top.png','intro__parallax-img')
+    .parallax__layer(data-speed="0.3") 
+      +image('content/parallax_bottom.png','intro__parallax-img')
+
   .intro__text
     .intro__description Личный сайт<br> веб разработчика
     .intro__name 
