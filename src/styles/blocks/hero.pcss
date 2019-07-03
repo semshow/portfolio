@@ -1,0 +1,168 @@
+.hero {
+  background-color: red;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+}
+
+.intro {
+  z-index: 1;
+}
+
+.parralax {
+  width: 100%;
+  height: 100%;
+}
+
+.parallax-img {
+  position: absolute;
+  object-fit: cover;
+}
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+
+  &:nth-child(1) {
+    .parallax-img {
+      object-fit: cover;
+      width: 100%;
+      height: 50%;
+      top: 0;
+      left: 0;
+    }
+  }
+  &:nth-child(2) {
+    .parallax-img {
+      height: 70%;
+      top: 209px;
+      left: 0;
+    }
+  }
+  &:nth-child(3) {
+    .parallax-img {
+      top: 300px;
+      height: 70%;
+      width: 100%;
+      left: 0;
+    }
+  }
+  &:nth-child(4) {
+    .parallax-img {
+      bottom: -400px;
+      left: 0;
+      width: 100%;
+      height: 70%;
+    }
+  }
+  &:nth-child(5) {
+    .parallax-img {
+      bottom: -450px;
+      height: 60%;
+      left: 0;
+    }
+  }
+  &:nth-child(6) {
+    .parallax-img {
+      bottom: -500px;
+      height: 60%;
+      left: 0;
+    }
+  }
+}
+
+.intro {
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  @include tablets {
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+  }
+}
+
+.intro__description {
+  text-align: right;
+  width: 35%;
+  font-size: 18px;
+  color: $white;
+  opacity: 0.4;
+  @include tablets {
+    text-align: center;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  @include phones {
+    font-size: 14px;
+  }
+}
+
+.intro__name {
+  width: 60%;
+}
+
+.intro__name-text {
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 1;
+  color: $white;
+
+  @include tablets {
+    font-size: 48px;
+    text-align: center;
+  }
+  @include phones {
+    font-size: 36px;
+  }
+}
+
+.scroll {
+  z-index: 3;
+  width: 110px;
+  margin: 0 auto;
+  display: flex;
+  text-decoration: none;
+  padding-bottom: 50px;
+  @include tablets {
+    display: none;
+  }
+}
+
+.scroll:hover .intro__scroll-text {
+  color: $orange;
+}
+.scroll:hover .intro__scroll-svg {
+  fill: $orange;
+}
+
+.scroll-text {
+  color: $white;
+  font-size: 18px;
+  transition: color 0.5s;
+}
+.scroll-icon {
+  width: 30px;
+  height: 30px;
+}
+.scroll-svg {
+  fill: $white;
+  max-width: 100%;
+  max-height: 100%;
+  transition: fill 0.5s;
+}
