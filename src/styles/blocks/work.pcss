@@ -54,6 +54,7 @@
   }
   @include phones {
     width: 100%;
+    height: auto;
   }
 }
 
@@ -116,12 +117,16 @@
   height: 100px;
 }
 
+.work__preview-slideritem:hover {
+  border: 2px solid $orange;
+}
 .work__preview-slideritem--active {
   border: 2px solid $orange;
 }
 .work__preview-pic {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .work__preview-description {
