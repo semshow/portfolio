@@ -10,17 +10,32 @@
   position: absolute;
   top: -170px;
   right: 0;
+  @include phones {
+    display: none;
+  }
 }
 
 .review {
   padding-top: 150px;
   margin-bottom: 200px;
+  @include tablets {
+    padding-top: 120px;
+  }
+  @include phones {
+    padding-top: 90px;
+    margin-bottom: 145px;
+  }
 }
 
 .review__headline {
   display: flex;
   justify-content: flex-start;
   margin-bottom: 100px;
+  @include phones {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
 }
 
 .review__headline-title {
@@ -28,6 +43,14 @@
   color: $white;
   font-weight: bold;
   margin-right: 95px;
+  @include tablets {
+    font-size: 30px;
+  }
+  @include phones {
+    margin-right: 0;
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
 }
 
 .review__btn {
@@ -44,6 +67,12 @@
   transition: border-color 0.5s;
   &:hover {
     border: 1px solid $orange;
+  }
+}
+
+.review__btn--next {
+  @include phones {
+    margin-right: 0;
   }
 }
 
@@ -67,8 +96,14 @@
 }
 
 .review__slider {
+  width: 540px;
   display: flex;
   justify-content: space-around;
+  @include phones {
+    transform: translateX(0);
+    width: 220%;
+    justify-content: space-between;
+  }
 }
 
 .review__item {
@@ -76,6 +111,10 @@
   width: 340px;
   color: $white;
   font-weight: 600;
+  @include phones {
+    width: 45%;
+    margin-left: 0;
+  }
 }
 
 .review__item-author {
