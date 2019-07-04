@@ -1,6 +1,6 @@
 mixin nav(mod)
   nav(class='main-menu main-menu--'+mod)
-    ul.main-menu__list
+    ul.main-menu__list#main-menu__links
       - var menu = ['Главная','Обо мне', 'Навыки','Работы','Отзывы','Связаться']
       each item in menu 
         li.main-menu__item
