@@ -32,14 +32,23 @@ let menu = (function(options) {
     closeButton.addEventListener('click', _closeMenu)
     modalMenu.addEventListener('click', function(e) {
       target = e.target
-
+      link = 'socials__link';  
       if (
-        target.className == 'main-menu__link' ||
-        target.parentElement.className == 'socials__link'
+        target.className == 'main-menu__link' || isAnyParentHasClass(target,link)
+        
       ) {
         _closeMenu()
       }
     })
+  }
+
+  function isAnyParentHasClass(element, className) {
+    const parent = element.parentNode;
+    if (parent && parent.classList) {
+      return parent.classList.contains(className) ?
+        true : isAnyParentHasClass(parent, className)
+    }
+    return false;
   }
 
   document.addEventListener('keydown', function(e) {

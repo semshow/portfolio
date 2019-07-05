@@ -1,13 +1,14 @@
 .header {
+  width: 100%;
   position: absolute;
   padding-top: 53px;
   padding-left: 28px;
   padding-right: 30px;
-  display: flex;
-  justify-content: space-between;
   z-index: 20;
 }
 .logo {
+  display: block;
+  text-decoration: none;
   font-family: 'Open Sans', sans-serif;
   font-size: 36px;
   font-weight: 800;
@@ -23,14 +24,18 @@
 }
 
 .main-menu--header {
+  @include desktopHd {
+    width: 50%;
+  }
   @include tablets {
     display: none;
   }
 }
 .main-menu--footer {
-  width: 100%;
+  width: 80%;
   @include tablets {
     margin-bottom: 55px;
+    width: 100%;
   }
 }
 
@@ -41,7 +46,9 @@
   }
 }
 .main-menu--footer .main-menu__list {
+  justify-content: space-between;
   @include tablets {
+    justify-content: flex-start;
     flex-wrap: wrap;
   }
 }

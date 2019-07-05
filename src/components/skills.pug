@@ -1,23 +1,23 @@
 section.skills
-  .skills__info
-    h2.skills__title Чем я могу быть полезен вам
-    .skills__info-text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-  .skills__data
-    .skills__data-hands
-      +image('content/hands_768.png','skills__data-img')
-    .skills__data-graphic
-      - const skills = [{"skillType": "FrontEnd","skills":{"HTML5": 90,"CSS3": 90,
-      -    "JavaScript": 70,
-      -    "JQuery и VueJS": 70 }},{
-      -   "skillType": "WorkFlow",
-      -   "skills":{
-      -    "GIT": 80,
-      -     "Terminal": 80,
-      -    "Gulp": 70,
-      -    "Webpack": 70 }}]
+  .container
+    .skills__info
+      h2.skills__title Чем я могу быть полезен вам
+      .skills__info-text 
+        p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+    .skills__data
+      - 
+        const skills = [{"skillType": "FrontEnd","skills":{"HTML5": 90,"CSS3": 90,
+          "JavaScript": 70,
+          "JQuery и VueJS": 70 }},{
+          "skillType": "WorkFlow",
+          "skills":{
+          "GIT": 80,
+          "Terminal": 80,
+          "Gulp": 70,
+          "Webpack": 70 }}]
       each item in skills
         .skills__data-row
-          p.skills__data-title= item.skillType
+          h3.skills__data-title= item.skillType
           .skills__data-circlerow
             each key, prop in item.skills
               .skills__data-circle

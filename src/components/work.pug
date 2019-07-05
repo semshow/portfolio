@@ -1,26 +1,14 @@
 section.work
   .container.container--work
     h2.work__title Мои работы
-    .work__preview
-      .work__preview-img
-        +image('content/preview1.jpg','work__preview-pic')
-        .work__preview-slider
-          .work__preview-slider-item.work__preview-slideritem--active
-            +image('content/preview1.jpg','work__preview-pic')
-          .work__preview-slider-item
-            +image('content/preview2.jpg','work__preview-pic')
-          .work__preview-slider-item
-            +image('content/preview3.jpg','work__preview-pic')
-        .work__preview-buttons    
-            .work__preview-next
-              button.preview__slider-btn.preview__slider-btn--next
-            .work__preview-prev
-              button.preview__slider-btn.preview__slider-btn--prev  
-      .work__preview-description
-        .work__preview-skills
-          .work__preview-skillsitem HTML
-          .work__preview-skillsitem CSS
-          .work__preview-skillsitem JavaScript
-        h3.work__preview-title Сайт школы образования
-        .work__preview-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-        a.work__preview-link(href="#") Посмотреть сайт
+    .work-content
+      include work-slider
+      .work-slider-description
+        .work-slider-skills
+          .work-slider-skillsitem HTML
+          .work-slider-skillsitem CSS
+          .work-slider-skillsitem JavaScript
+        h3.work-slider-title Сайт школы образования
+        .work-slider-text 
+          p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+        a.work-slider-link(href="#") Посмотреть сайт     

@@ -1,5 +1,6 @@
 .skills {
-  min-height: 1025px;
+  position: relative;
+  min-height: 71.625rem;
   background: url('~images/content/skills.jpg') no-repeat center center;
   background-size: 100% 100%;
   padding-top: 149px;
@@ -7,6 +8,7 @@
     padding-top: 120px;
   }
   @include phones {
+    min-height: 87.25rem;
     padding-top: 100px;
   }
 }
@@ -20,12 +22,14 @@
 }
 
 .skills__info-text {
+  padding-left: 12%;
+  margin: 0 auto;
+  width: 70%;
   font-size: 16px;
   @include tablets {
-    width: 70%;
-    margin: 0 auto;
     text-align: center;
     font-size: 14px;
+    padding-left: 0;
   }
   @include phones {
     text-align: left;
@@ -34,6 +38,7 @@
 }
 
 .skills__title {
+  text-align: center;
   color: $white;
   font-weight: bold;
   font-size: 30px;
@@ -51,34 +56,35 @@
 }
 
 .skills__data {
-  display: flex;
-  @include tablets {
-    flex-direction: column-reverse;
-    width: 90%;
-    margin: 0 auto;
+  width: 60%;
+  margin-left: 40%;
+  &:before {
+    position: absolute;
+    left: 0;
+    top: 15%;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: url('~images/content/hands_1800.png') no-repeat left center;
+    @include desktop {
+      left: 0;
+      background: url('~images/content/hands_1200.png') no-repeat left center;
+      background-size: 50%;
+    }
+    @include tablets {
+      background: url('~images/content/hands_768.png') no-repeat bottom center;
+      bottom: 0;
+      top: 0;
+      width: 100%;
+    }
+    @include phones {
+      background: url('~images/content/hands_320.png') no-repeat bottom center;
+    }
   }
-}
-
-.skills__data-graphic {
-  width: 700px;
-  margin: 0 auto;
   @include tablets {
     width: 100%;
     margin: 0 auto;
-  }
-}
-.skills__data-hands {
-  margin-left: -140px;
-  @include tablets {
-    margin: 0;
-  }
-}
-
-.skills__data-img {
-  transform: rotate(90deg);
-  @include tablets {
-    margin: 0 auto;
-    transform: rotate(0);
+    flex-direction: column-reverse;
   }
 }
 
@@ -93,8 +99,8 @@
 }
 
 .skills__circle-percentage {
-  width: 134px;
-  height: 134px;
+  width: 143px;
+  height: 143px;
   transform: rotate(-90deg);
 }
 

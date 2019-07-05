@@ -1,0 +1,17 @@
+.work-slider
+  +image('content/preview1.jpg','work-slider-imgpic')
+  .work-slider__block
+    a(href="#").work-slider__block-item.work-slider-slideritem--active
+      .work-slider-sliderhover
+      +image('content/preview1.jpg','work-slider-pic')
+    a(href="#").work-slider__block-item
+      .work-slider-sliderhover
+      +image('content/preview2.jpg','work-slider-pic')
+    a(href="#").work-slider__block-item
+      .work-slider-sliderhover
+      +image('content/preview3.jpg','work-slider-pic')
+  .work-slider-buttons    
+    .work-slider-next
+      button.preview__slider-btn.preview__slider-btn--next
+    .work-slider-prev
+      button.preview__slider-btn.preview__slider-btn--prev    

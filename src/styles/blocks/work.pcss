@@ -10,6 +10,7 @@
 }
 
 .work__title {
+  color: $work-text-gray;
   font-size: 36px;
   font-weight: bold;
   margin-bottom: 59px;
@@ -20,7 +21,7 @@
   }
 }
 
-.work__preview {
+.work-content {
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -29,7 +30,7 @@
   }
 }
 
-.work__preview-img {
+.work-slider {
   width: 55%;
   height: 354px;
   position: relative;
@@ -58,9 +59,15 @@
   }
 }
 
-.work__preview-slider {
+.work-slider-imgpic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-slider__block {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   width: 100%;
   height: 100px;
   position: absolute;
@@ -70,7 +77,7 @@
   }
 }
 
-.work__preview-buttons {
+.work-slider-buttons {
   width: 50px;
   height: 100px;
   position: absolute;
@@ -112,24 +119,34 @@
   }
 }
 
-.work__preview-slideritem {
+.work-slider__block-item {
+  position: relative;
   width: 178px;
   height: 100px;
 }
 
-.work__preview-slideritem:hover {
+.work-slider__block-item:hover .work-slider-sliderhover{
+  display: block;
+  }
+.work-slider-slideritem--active {
   border: 2px solid $orange;
 }
-.work__preview-slideritem--active {
-  border: 2px solid $orange;
+
+.work-slider-sliderhover {
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: $orange;
+  opacity: 0.5; 
 }
-.work__preview-pic {
+.work-slider-pic {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.work__preview-description {
+.work-slider-description {
   width: 35%;
   @include tablets {
     width: 100%;
@@ -140,14 +157,14 @@
   }
 }
 
-.work__preview-skills {
+.work-slider-skills {
   margin-bottom: 50px;
   display: flex;
   @include tablets {
     justify-content: center;
   }
 }
-.work__preview-skillsitem {
+.work-slider-skillsitem {
   display: inline-block;
   min-width: 65px;
   min-height: 45px;
@@ -157,13 +174,17 @@
   padding: 0 20px;
   border-radius: 30px;
   margin-right: 15px;
+  color: $work-gray;
+  opacity: 0.7;
+  font-weight: 600;
 }
 
-.work__preview-title {
+.work-slider-title {
   font-size: 30px;
   line-height: 48px;
   font-weight: bold;
   margin-bottom: 45px;
+  color: $title-gray;
 
   @include tablets {
     text-align: center;
@@ -174,9 +195,12 @@
   }
 }
 
-.work__preview-text {
+.work-slider-text {
   font-weight: 600;
   margin-bottom: 45px;
+  color: $work-text-gray;
+  opacity: 0.7;
+  font-weight: 600;
   @include tablets {
     display: block;
     width: 75%;
@@ -193,10 +217,9 @@
   }
 }
 
-.work__preview-link {
+.work-slider-link {
   display: block;
   width: 200px;
-  margin: 0 auto;
   margin-bottom: 110px;
   color: #4b6fd7;
   font-weight: bold;
@@ -212,8 +235,12 @@
   &:hover {
     text-decoration: underline;
   }
-  @include phones {
+
+  @include tablets {
     margin: 0 auto;
-    margin-bottom: 100px;
+    margin-bottom: 115px;
+  }
+  @include phones {
+    margin-bottom: 105px;
   }
 }

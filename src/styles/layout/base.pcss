@@ -17,14 +17,13 @@ body {
   line-height: 1.42;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: $text-color;
+  color: rgba(255,255,255,.5);
+  
 }
 
 .body--active-modal {
-    overflow: hidden;
-  }
-
-
+  overflow: hidden;
+}
 
 .wrapper {
   overflow: hidden;
@@ -41,6 +40,11 @@ body {
   @include phones {
     width: 85%;
   }
+
+  &--header {
+    display: flex;
+    justify-content: space-between;
+  }
   &--work {
     width: 90%;
     @include phones {
@@ -48,7 +52,7 @@ body {
     }
   }
   &--review {
-    width: 90%
+    width: 90%;
   }
   &--footer {
     width: 90%;
@@ -59,7 +63,6 @@ body {
       align-items: center;
     }
   }
-  
 }
 
 .container--about {
