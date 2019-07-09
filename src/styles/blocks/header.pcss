@@ -77,10 +77,16 @@
   border-bottom: 3px solid transparent;
   transition: color 0.5s;
   transition: border 0.3s;
-  &:hover {
-    color: $orange;
+}
+
+.main-menu__item:first-child .main-menu__link {
+  color: $orange;
     border-bottom: 3px solid $orange;
-  }
+} 
+
+.main-menu__link--active .main-menu__link--active {
+  color: $orange;
+    border-bottom: 3px solid $orange;
 }
 
 .socials {

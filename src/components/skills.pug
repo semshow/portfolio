@@ -4,27 +4,8 @@ section.skills
       h2.skills__title Чем я могу быть полезен вам
       .skills__info-text 
         p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-    .skills__data
-      - 
-        const skills = [{"skillType": "FrontEnd","skills":{"HTML5": 90,"CSS3": 90,
-          "JavaScript": 70,
-          "JQuery и VueJS": 70 }},{
-          "skillType": "WorkFlow",
-          "skills":{
-          "GIT": 80,
-          "Terminal": 80,
-          "Gulp": 70,
-          "Webpack": 70 }}]
-      each item in skills
-        .skills__data-row
-          h3.skills__data-title= item.skillType
-          .skills__data-circlerow
-            each key, prop in item.skills
-              .skills__data-circle
-                svg.skills__circle-percentage(viewbox="0 0 100 100" preserveAspectRation="none")
-                  circle.skills__circle.skills__circle-inner(cx="50" cy="50" r="40")
-                  circle.skills__circle.skills__circle-out(cx="50" cy="50" r="40" style=`animation-delay: -${key}s`) 
-                p.skills__circle-text= prop 
+    #skills_container
+    
 
 
 

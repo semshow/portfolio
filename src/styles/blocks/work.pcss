@@ -35,7 +35,7 @@
   height: 354px;
   position: relative;
   &:after {
-    content: '2';
+    content: attr(data-slide);
     position: absolute;
     font-size: 300px;
     line-height: 300px;
@@ -128,7 +128,7 @@
 .work-slider__block-item:hover .work-slider-sliderhover{
   display: block;
   }
-.work-slider-slideritem--active {
+.work-slider__item--active {
   border: 2px solid $orange;
 }
 

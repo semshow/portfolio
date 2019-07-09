@@ -31,23 +31,31 @@
   display: flex;
   justify-content: flex-start;
   margin-bottom: 100px;
+
+  @include tablets {
+    margin-bottom: 75px;
+  }
   @media screen and (max-width: 640px) {
-    flex-direction: column;
-    align-items: center;
     margin-bottom: 30px;
   }
 }
 
+.review__content {
+  position: relative;
+  width: 80%;
+}
+
 .review__headline-buttons {
-  width: 30%;
+  position: absolute;
+  left: 45%;
+  top: -140px;
   @include tablets {
-    width: 30%;
+    left: 60%;
+    top: -115px;
   }
-  @media screen and (max-width: 640px) {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin: 0 auto;
+  @include phones {
+    left: 30%;
+    top: -35%;
   }
 }
 
@@ -56,18 +64,11 @@
   font-size: 36px;
   color: $white;
   font-weight: bold;
-  margin-right: 90px;
   @include tablets {
     font-size: 30px;
-    margin-right: 70px;
-    width: 50%;
   }
-
-  @media screen and (max-width: 640px) {
-    width: 100%;
-    margin-right: 0;
-    font-size: 24px;
-    margin-bottom: 30px;
+  @include phones {
+    margin-bottom: 20%;
   }
 }
 
@@ -114,22 +115,26 @@
 }
 
 .review__slider {
-  display: flex;
-  justify-content: space-around;
+  width: 100%;
+  /* display: flex;
+  justify-content: space-around; */
   @include phones {
     transform: translateX(0);
     width: 220%;
     justify-content: space-between;
   }
 }
-
+.flickity-slider {
+  list-style-type: none;
+}
 .review__item {
   margin-left: 95px;
-  width: 340px;
+  width: 45%;
   color: $white;
   font-weight: 600;
+
   @include phones {
-    width: 45%;
+    width: 100%;
     margin-left: 0;
   }
 }

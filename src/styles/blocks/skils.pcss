@@ -6,9 +6,10 @@
   padding-top: 149px;
   @include tablets {
     padding-top: 120px;
+    min-height: 1400px;
   }
   @include phones {
-    min-height: 87.25rem;
+    min-height: 1500px;
     padding-top: 100px;
   }
 }
@@ -55,7 +56,7 @@
   }
 }
 
-.skills__data {
+.skills__widget {
   width: 60%;
   margin-left: 40%;
   &:before {
@@ -66,10 +67,11 @@
     height: 100%;
     content: '';
     background: url('~images/content/hands_1800.png') no-repeat left center;
+    background-size: 40%;
     @include desktop {
       left: 0;
       background: url('~images/content/hands_1200.png') no-repeat left center;
-      background-size: 50%;
+      background-size: 40%;
     }
     @include tablets {
       background: url('~images/content/hands_768.png') no-repeat bottom center;
@@ -88,7 +90,11 @@
   }
 }
 
-.skills__data-title {
+.skills__widget-item {
+  margin-bottom: 58px;
+}
+
+.skills__row-title {
   font-size: 24px;
   color: $white;
   font-weight: bold;
@@ -98,13 +104,7 @@
   }
 }
 
-.skills__circle-percentage {
-  width: 143px;
-  height: 143px;
-  transform: rotate(-90deg);
-}
-
-.skills__data-circlerow {
+.skills__row-content {
   display: flex;
   justify-content: center;
   @media screen and (max-width: 420px) {
@@ -112,11 +112,7 @@
   }
 }
 
-.skills__data-row {
-  margin-bottom: 58px;
-}
-
-.skills__data-circle {
+.skills__item {
   /* width: 20%; */
   position: relative;
   display: flex;
@@ -124,9 +120,11 @@
   margin-right: 2%;
 }
 
-.skills__data-circle:last-child {
-  margin-right: 0;
+.skill__circle-shape {
+  width: 143px;
+  height: 143px;
 }
+
 .skills__circle-text {
   position: absolute;
   top: 50%;
@@ -140,19 +138,6 @@
   stroke: $white;
 }
 
-.skills__circle-out {
-  stroke-width: 8px;
-  stroke: $orange;
-  stroke-dasharray: 251;
-  stroke-dashoffset: 251;
-  animation: fill 100s linear infinite;
-  animation-play-state: paused;
-}
-
-.skills__circle-inner {
-  stroke-opacity: 0.1;
-}
-
 .skills__circle-text {
   font-size: 18px;
   font-weight: bold;
@@ -161,12 +146,41 @@
   }
 }
 
-@keyframes fill {
-  from {
-    stroke-dashoffset: 251;
-  }
+.skill {
+  position: relative;
+  width: 166px;
+  height: 166px;
 
-  to {
-    stroke-dashoffset: 0;
+  @include tablets {
+    width: 135px;
+    height: 135px;
+  }
+}
+
+.skill__circle {
+  fill: transparent;
+  &_under {
+    stroke: #eaeaea;
+    stroke-width: 5px;
+  }
+  &_above {
+    stroke-width: 12px;
+    stroke-dasharray: 251;
+    stroke-dashoffset: 100;
+  }
+}
+
+.skill__circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 18px;
+  color: rgba($text-color, .5);
+  padding: 14px;
+
+  @include phones {
+    font-size: 16px;
   }
 }

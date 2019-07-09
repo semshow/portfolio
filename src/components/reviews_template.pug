@@ -1,0 +1,24 @@
+script(type="text/x-template")#reviews_template
+  .review__content
+    .review__headline-buttons
+      button(type="button" @click="previous()").review__btn.review__btn--prev 
+        +icon('arrow-down','review__btn-arrow')
+      button(type="button" @click="next()").review__btn.review__btn--next 
+        +icon('arrow-down','review__btn-arrow')  
+
+    .review__slider    
+      flickity(ref="flickity" :options="flickityOptions") 
+        li(v-for="review in reviews" :key="review.id").review__item
+          review(
+            :review = "review"
+        ) 
+
+script(type="text/x-template")#review_template
+  .review__itemblock
+    .review__item-text {{review.text}}
+    .review__item-author
+      .review__item-authorimg
+        img(:src="review.avatar" :alt="review.autor").review__item-pic
+      .review__item-authortext 
+        p.review__item-authorname {{review.autor}} 
+        p.review__item-authortitle {{review.position}}
