@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import Flickity from 'vue-flickity'
+import Vue from 'vue';
+import Flickity from 'vue-flickity';
 
 
 const review = {
@@ -7,7 +7,7 @@ const review = {
   props: {
     review: Object
   }
-}
+};
 new Vue({
   el: '#reviews_slider',
   template: '#reviews_template',
@@ -29,7 +29,7 @@ new Vue({
   methods: {
     makeArrWithRequiredImages(data) {
       return data.map((item) => {
-        const requirePic = require(`../images/content/${item.photo}`)
+        const requirePic = require(`../images/content/${item.avatar}`)
         item.photo = requirePic;
         return item
       })
