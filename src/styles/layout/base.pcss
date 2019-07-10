@@ -2,7 +2,9 @@ html {
   @include desktop {
     font-size: 15px;
   }
+  
   @include tablets {
+
     font-size: 14px;
   }
 }
@@ -12,12 +14,12 @@ html {
 }
 
 body {
-  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-family: "Open Sans", Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.42;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: rgba(255,255,255,.5);
+  color: rgba(255,255,255, 0.5);
   
 }
 
@@ -35,7 +37,6 @@ body {
   margin: 0 auto;
   max-width: 1480px;
   width: 95%;
-  // width: 1490px;
 
   @include phones {
     width: 85%;
@@ -47,6 +48,7 @@ body {
   }
   &--work {
     width: 90%;
+
     @include phones {
       width: 100%;
     }
@@ -58,6 +60,7 @@ body {
     width: 90%;
     display: flex;
     justify-content: space-between;
+
     @include phones {
       flex-direction: column;
       align-items: center;
@@ -69,6 +72,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   @include phones {
     flex-direction: column;
   }
@@ -109,7 +113,7 @@ p {
   padding: 0;
 }
 
-button[type='button'] {
+button[type="button"] {
   cursor: pointer;
   background-color: transparent;
 }

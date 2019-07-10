@@ -1,7 +1,7 @@
 .feedback-form__wrapper {
   width: 100%;
   min-height: 1375px;
-  background: url('~images/content/review_form.jpg') no-repeat center center;
+  background: url("~images/content/review_form.jpg") no-repeat center center;
   background-size: 100% 100%;
   position: relative;
 }
@@ -10,6 +10,7 @@
   position: absolute;
   top: -170px;
   right: 0;
+
   @include phones {
     display: none;
   }
@@ -18,9 +19,11 @@
 .review {
   padding-top: 150px;
   margin-bottom: 200px;
+
   @include tablets {
     padding-top: 120px;
   }
+
   @include phones {
     padding-top: 90px;
     margin-bottom: 145px;
@@ -35,6 +38,7 @@
   @include tablets {
     margin-bottom: 75px;
   }
+
   @media screen and (max-width: 640px) {
     margin-bottom: 30px;
   }
@@ -49,10 +53,12 @@
   position: absolute;
   left: 45%;
   top: -140px;
+
   @include tablets {
     left: 60%;
     top: -115px;
   }
+
   @include phones {
     left: 30%;
     top: -35%;
@@ -64,9 +70,11 @@
   font-size: 36px;
   color: $white;
   font-weight: bold;
+
   @include tablets {
     font-size: 30px;
   }
+
   @include phones {
     margin-bottom: 20%;
   }
@@ -109,15 +117,13 @@
 .review__btn--prev .review__btn-arrow {
   transform: rotate(-180deg);
 }
-
-.review__btn--prev:before {
+.review__btn--prev::before {
   transform: rotate(-180deg);
 }
 
 .review__slider {
   width: 100%;
-  /* display: flex;
-  justify-content: space-around; */
+
   @include phones {
     transform: translateX(0);
     width: 220%;

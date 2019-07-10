@@ -30,7 +30,7 @@ new Vue({
     makeArrWithRequiredImages(data) {
       return data.map((item) => {
         const requirePic = require(`../images/content/${item.avatar}`)
-        item.photo = requirePic;
+        item.avatar = requirePic;
         return item
       })
     },

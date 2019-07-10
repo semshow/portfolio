@@ -1,13 +1,15 @@
 .skills {
   position: relative;
   min-height: 71.625rem;
-  background: url('~images/content/skills.jpg') no-repeat center center;
+  background: url("~images/content/skills.jpg") no-repeat center center;
   background-size: 100% 100%;
   padding-top: 149px;
+
   @include tablets {
     padding-top: 120px;
     min-height: 1400px;
   }
+
   @include phones {
     min-height: 1500px;
     padding-top: 100px;
@@ -15,23 +17,27 @@
 }
 
 .skills__info {
-  width: 55%;
+  width: 600px;
   margin: 0 auto 63px;
+
   @include tablets {
+    width: 480px;
+  }
+
+  @include phones {
     width: 100%;
   }
 }
 
 .skills__info-text {
-  padding-left: 12%;
-  margin: 0 auto;
-  width: 70%;
   font-size: 16px;
+
   @include tablets {
     text-align: center;
     font-size: 14px;
     padding-left: 0;
   }
+
   @include phones {
     text-align: left;
     font-size: 14px;
@@ -39,59 +45,80 @@
 }
 
 .skills__title {
-  text-align: center;
   color: $white;
   font-weight: bold;
   font-size: 30px;
   margin-bottom: 59px;
+
   @include tablets {
     margin: 0 auto;
     width: 70%;
     text-align: center;
     margin-bottom: 25px;
   }
+
   @include phones {
     font-size: 24px;
     text-align: left;
+    margin: 0;
+    margin-bottom: 25px;
   }
 }
 
 .skills__widget {
-  width: 60%;
+  width: 750px;
   margin-left: 40%;
-  &:before {
+  &::before {
     position: absolute;
     left: 0;
     top: 15%;
     width: 100%;
     height: 100%;
-    content: '';
-    background: url('~images/content/hands_1800.png') no-repeat left center;
+    content: "";
+    background: url("~images/content/hands_1800.png") no-repeat left center;
     background-size: 40%;
+
     @include desktop {
       left: 0;
-      background: url('~images/content/hands_1200.png') no-repeat left center;
+      background: url("~images/content/hands_1200.png") no-repeat left center;
       background-size: 40%;
     }
+
     @include tablets {
-      background: url('~images/content/hands_768.png') no-repeat bottom center;
+      background: url("~images/content/hands_768.png") no-repeat bottom center;
       bottom: 0;
       top: 0;
       width: 100%;
     }
+
     @include phones {
-      background: url('~images/content/hands_320.png') no-repeat bottom center;
+      background: url("~images/content/hands_320.png") no-repeat bottom center;
     }
   }
+
+  @include desktop {
+    width: 690px;
+  }
+
   @include tablets {
     width: 100%;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
     flex-direction: column-reverse;
   }
 }
 
 .skills__widget-item {
   margin-bottom: 58px;
+
+  @include tablets {
+    width: 80%;
+  }
+
+  @include phones {
+    width: 100%;
+  }
 }
 
 .skills__row-title {
@@ -99,6 +126,7 @@
   color: $white;
   font-weight: bold;
   margin-bottom: 30px;
+
   @include tablets {
     text-align: center;
   }
@@ -106,18 +134,14 @@
 
 .skills__row-content {
   display: flex;
-  justify-content: center;
-  @media screen and (max-width: 420px) {
-    flex-wrap: wrap;
-  }
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .skills__item {
-  /* width: 20%; */
   position: relative;
   display: flex;
   justify-content: center;
-  margin-right: 2%;
 }
 
 .skill__circle-shape {
@@ -130,17 +154,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.skills__circle {
-  fill: transparent;
-  stroke-width: 2px;
-  stroke: $white;
-}
-
-.skills__circle-text {
   font-size: 18px;
   font-weight: bold;
+
   @include tablets {
     font-size: 16px;
   }
@@ -160,27 +176,13 @@
 .skill__circle {
   fill: transparent;
   &_under {
-    stroke: #eaeaea;
-    stroke-width: 5px;
+    stroke: $gray;
+    stroke-width: 3px;
+    stroke-opacity: 0.5;
   }
   &_above {
-    stroke-width: 12px;
+    stroke-width: 8px;
     stroke-dasharray: 251;
     stroke-dashoffset: 100;
-  }
-}
-
-.skill__circle-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-weight: bold;
-  font-size: 18px;
-  color: rgba($text-color, .5);
-  padding: 14px;
-
-  @include phones {
-    font-size: 16px;
   }
 }
