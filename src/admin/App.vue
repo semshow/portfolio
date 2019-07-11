@@ -1,3 +1,10 @@
-<template lang="pug">
-  h1 Welcome to the Vue App
+<template lang=“pug”>
+  div
+    p hello 
 </template>
+<script>
+export default {
+
+}
+</script>
+
