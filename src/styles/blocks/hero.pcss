@@ -1,0 +1,170 @@
+.hero {
+  background-color: #1b1f22;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+}
+
+.parallax {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.parallax-img {
+  position: absolute;
+  object-fit: cover;
+}
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+
+  &:nth-child(1) {
+    .parallax-img {
+      object-fit: cover;
+      width: 100%;
+      height: 50%;
+      top: 0;
+      left: 0;
+    }
+  }
+  &:nth-child(2) {
+    .parallax-img {
+      width: 100%;
+      height: 70%;
+      top: 209px;
+      left: 0;
+    }
+  }
+  &:nth-child(3) {
+    .parallax-img {
+      top: 300px;
+      height: 70%;
+      width: 100%;
+      left: 0;
+    }
+  }
+  &:nth-child(4) {
+    .parallax-img {
+      bottom: -400px;
+      left: 0;
+      width: 100%;
+      height: 70%;
+    }
+  }
+  &:nth-child(5) {
+    .parallax-img {
+      width: 100%;
+      bottom: -450px;
+      height: 60%;
+      left: 0;
+    }
+  }
+  &:nth-child(6) {
+    .parallax-img {
+      width: 100%;
+      bottom: -500px;
+      height: 60%;
+      left: 0;
+    }
+  }
+}
+
+.intro {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  @include tablets {
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+  }
+}
+
+.intro__description {
+  text-align: right;
+  width: 35%;
+  font-size: 18px;
+  color: $white;
+  opacity: 0.5;
+
+  @include tablets {
+    text-align: center;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  @include phones {
+    font-size: 14px;
+  }
+}
+
+.intro__name {
+  width: 60%;
+}
+
+.intro__name-text {
+  width: 70%;
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 1;
+  color: $white;
+
+  @include tablets {
+    font-size: 48px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  @include phones {
+    font-size: 36px;
+  }
+}
+
+.scroll {
+  z-index: 3;
+  color: $white;
+  font-size: 18px;
+  transition: color 0.5s;
+  margin: 0 auto;
+  display: flex;
+  text-decoration: none;
+  padding-bottom: 50px;
+  &::after {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    content: "";
+    background: svg-load("scroll.svg", fill=$white, width=100%, height=100%)
+      center center no-repeat;
+    transition: top 0.3s;
+  }
+
+  @include tablets {
+    display: none;
+  }
+}
+
+.scroll:hover .scroll::after {
+  top: 8px;
+}

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack-dev-server --mode=development --hot",
     "build": "rm -rf dist && webpack --mode=production --progress",
-    "reg": "node reg-util.js"
+    "reg": "node reg-util.js",
+    "stylelint": "stylelint src/styles/**/*.pcss"
   },
   "keywords": [],
   "author": "",
@@ -36,10 +37,12 @@
     "postcss-svgo": "^4.0.2",
     "pug-loader": "^2.4.0",
     "pug-plain-loader": "^1.0.0",
+    "stylelint": "^10.1.0",
     "svg-sprite-loader": "^4.1.3",
     "svg-transform-loader": "^2.0.7",
     "svgo-loader": "^2.2.0",
     "terser-webpack-plugin": "^1.2.3",
+    "vue-cli-plugin-pug": "^1.0.7",
     "vue-loader": "^15.6.4",
     "vue-template-compiler": "^2.6.7",
     "webpack": "^4.29.5",
@@ -56,6 +59,7 @@
     "request": "^2.88.0",
     "signale": "^1.4.0",
     "vue": "^2.6.7",
+    "vue-flickity": "^1.1.2",
     "vue-router": "^3.0.2"
   }
 }
