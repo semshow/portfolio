@@ -24,7 +24,7 @@
   }
 }
 
-.work-content {
+.work__content {
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -34,7 +34,7 @@
   }
 }
 
-.work-slider {
+.work__slider {
   width: 55%;
   height: 354px;
   position: relative;
@@ -65,13 +65,13 @@
   }
 }
 
-.work-slider-imgpic {
+.work__slider-imgpic {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.work-slider__block {
+.work__slider-block {
   display: flex;
   justify-content: flex-end;
   width: 100%;
@@ -84,7 +84,7 @@
   }
 }
 
-.work-slider-buttons {
+.work__slider-buttons {
   width: 50px;
   height: 100px;
   position: absolute;
@@ -127,20 +127,20 @@
   }
 }
 
-.work-slider__block-item {
+.work__slider-block-item {
   position: relative;
   width: 178px;
   height: 100px;
 }
 
-.work-slider__block-item:hover .work-slider-sliderhover {
+.work__slider-block-item:hover .work__slider-sliderhover {
   display: block;
 }
-.work-slider__item--active {
+.work__slider__item--active {
   border: 2px solid $orange;
 }
 
-.work-slider-sliderhover {
+.work__slider-sliderhover {
   position: absolute;
   display: none;
   width: 100%;
@@ -148,13 +148,13 @@
   background-color: $orange;
   opacity: 0.5;
 }
-.work-slider-pic {
+.work__slider-pic {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.work-slider-description {
+.work__slider-description {
   width: 35%;
 
   @include tablets {
@@ -167,15 +167,16 @@
   }
 }
 
-.work-slider-skills {
+.work__slider-skills {
   margin-bottom: 50px;
   display: flex;
+  flex-wrap: wrap;
 
   @include tablets {
     justify-content: center;
   }
 }
-.work-slider-skillsitem {
+.work__slider-skills-item {
   display: inline-block;
   min-width: 65px;
   min-height: 45px;
@@ -185,12 +186,13 @@
   padding: 0 20px;
   border-radius: 30px;
   margin-right: 15px;
+  margin-bottom: 10px;
   color: $work-gray;
   opacity: 0.7;
   font-weight: 600;
 }
 
-.work-slider-title {
+.work__slider-title {
   font-size: 30px;
   line-height: 48px;
   font-weight: bold;
@@ -207,7 +209,7 @@
   }
 }
 
-.work-slider-text {
+.work__slider-text {
   font-weight: 600;
   margin-bottom: 45px;
   color: $work-text-gray;
@@ -229,7 +231,7 @@
   }
 }
 
-.work-slider-link {
+.work__slider-link {
   display: block;
   width: 200px;
   margin-bottom: 110px;
