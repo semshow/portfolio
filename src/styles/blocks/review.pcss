@@ -1,15 +1,78 @@
 .feedback-form__wrapper {
   width: 100%;
   min-height: 1375px;
-  background: url("~images/content/review_form.jpg") no-repeat center center;
+  background: url('~images/content/review_form.jpg') no-repeat center center;
   background-size: 100% 100%;
   position: relative;
 }
 
-.feedback-form__decor {
+.feedback-form__decor1 {
   position: absolute;
   top: -170px;
   right: 0;
+
+  @include desktop {
+    right: -116px;
+  }
+
+  @media screen and (max-width: 910px) {
+    right: -250px;
+  }
+
+  @media screen and (max-width: 690px) {
+    right: -350px;
+  }
+
+  @include phones {
+    display: none;
+  }
+}
+.feedback-form__decor2 {
+  position: absolute;
+  top: 460px;
+  right: 360px;
+
+  @include desktop {
+    right: 230px;
+  }
+
+  @include tablets {
+    right: 100px;
+  }
+
+  @include phones {
+    display: none;
+  }
+}
+.feedback-form__decor3 {
+  position: absolute;
+  bottom: 600px;
+  right: 180px;
+
+  @include desktop {
+    right: 55px;
+  }
+
+  @include tablets {
+    right: -40px;
+  }
+
+  @include phones {
+    display: none;
+  }
+}
+.feedback-form__decor4 {
+  position: absolute;
+  bottom: 140px;
+  right: 170px;
+
+  @include desktop {
+    right: 55px;
+  }
+
+  @include tablets {
+    right: -100px;
+  }
 
   @include phones {
     display: none;
@@ -32,51 +95,39 @@
 
 .review__headline {
   display: flex;
-  justify-content: flex-start;
+  flex-wrap: wrap;
   margin-bottom: 100px;
 
   @include tablets {
     margin-bottom: 75px;
   }
 
-  @media screen and (max-width: 640px) {
-    margin-bottom: 30px;
+  @media screen and (max-width: 660px) {
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
   }
-}
-
-.review__content {
-  position: relative;
-  width: 80%;
 }
 
 .review__headline-buttons {
-  position: absolute;
-  left: 45%;
-  top: -140px;
-
-  @include tablets {
-    left: 60%;
-    top: -115px;
-  }
-
-  @include phones {
-    left: 30%;
-    top: -35%;
-  }
+  display: inline-block;
 }
 
 .review__headline-title {
+  margin-right: 90px;
   text-align: center;
   font-size: 36px;
   color: $white;
   font-weight: bold;
 
   @include tablets {
+    margin-right: 70px;
     font-size: 30px;
   }
 
-  @include phones {
-    margin-bottom: 20%;
+  @media screen and (max-width: 660px) {
+    margin-right: 0;
+    margin-bottom: 30px;
   }
 }
 
@@ -94,6 +145,9 @@
   transition: border-color 0.5s;
   &:hover {
     border: 1px solid $orange;
+  }
+  &::last-child {
+    margin-right: 0;
   }
 }
 

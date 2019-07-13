@@ -23,13 +23,66 @@
       .admin__container
         .admin__content-header
           h1.admin__content-title Блок "Обо мне" 
-          a.admin__content-headerbutton Добавить группу
+          button.add +
+          button.admin__content-add-title  Добавить группу
         form.admin__blocks
           .block
             .block__header  
-              input(type="text" placeholder="Название новой группы").block__title 
-              .block__header__icons
-          
+              input(type="text" placeholder="Название новой группы").field.field__name
+              .block__header-icons
+                button.block__header-icon.icon__tick
+                button.block__header-icon.icon__remove
+            .block__footer
+              input(type="text" placeholder="Новый навык").field.field__skill
+              input(type="text" placeholder="100%").field.field__percent
+              button.add +
+          .block
+            .block__header  
+              input(type="text" placeholder="Frontend").field.field__name
+              .block__header-icons
+                button.block__header-icon.icon__tick
+                button.block__header-icon.icon__remove
+            .block__content 
+              table.block__content-table
+                - var data = [['Git','100','%'],['Terminal','90','%'],['Gulp', '80','%'],['Webpack','85','%']]
+                each row in data
+                  tr.block__content-row
+                    td.block__content-skill #{row[0]} 
+                    td.block__content-level 
+                      .block__content-number  #{row[1]} 
+                      .block__content-percent #{row[2]} 
+                    td.block__content-icons
+                      .block__content-pencil   
+                      .block__content-bin   
+            .block__footer
+              input(type="text" placeholder="Новый навык").field.field__skill
+              input(type="text" placeholder="100%").field.field__percent
+              button.add +
+          .block
+            .block__header  
+              input(type="text" placeholder="Workflow").field.field__name
+              .block__header-icons
+                button.block__header-icon.icon__tick
+                button.block__header-icon.icon__remove
+            .block__content 
+              table.block__content-table
+                - var data = [['HTML5','100','%'],['CSS','90','%'],['Javascript', '80','%'],['Jquery и VueJS','85','%']]
+                each row in data
+                  tr.block__content-row
+                    td.block__content-skill #{row[0]} 
+                    td.block__content-level 
+                      .block__content-number  #{row[1]} 
+                      .block__content-percent #{row[2]} 
+                    td.block__content-icons
+                      .block__content-pencil   
+                      .block__content-bin       
+            .block__footer
+              input(type="text" placeholder="Новый навык").field.field__skill
+              input(type="text" placeholder="100%").field.field__percent
+              button.add +
+
+
+
 </template>
 <script>
   export default {}
@@ -108,9 +161,9 @@
     padding: 30px 0 30px 0;
   }
 
- .admin__link--active {
-    color: #383bcf;
-    border-bottom: 3px #383bcf solid;
+.admin__link--active {
+  color: #383bcf;
+  border-bottom: 3px #383bcf solid;
   }
 
   .admin__content {
@@ -130,25 +183,166 @@
     line-height: 21px;
     margin-right: 55px;
   }
-  .admin__content-headerbutton {
-    display: block;
+  .admin__content-add-title {
+    display: inline-block;
     color: #383bcf;
     font-weight: 600;
     line-height: 21px;
-    padding-left: 35px;
+    margin-left: 15px;
     position: relative;
+    background-color: transparent;
   }
-  .admin__content-headerbutton::before {
+
+  .add {
+    display: inline-flex;
+    color: white;
     text-align: center;
-    color: $white;
-    position: absolute;
-    left: 0;
-    content: '+';
+    justify-content: center;
+    align-items: center;
     width: 20px;
     height: 20px;
     background: linear-gradient(to right, #006aed, #3f35cb);
     border-radius: 50%;
   }
 
+  .admin__blocks {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .block {
+    width: 48%;
+    color: #414c63;
+    background-color: white;
+    min-height: 390px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: 4px 3px 20px 0px rgba(0,0,0,0.1);
+    margin-bottom: 28px;
+  }
+
+  .block__header {
+    height: 58px;
+    border-bottom: 1px solid rgba(fffff, 0.3);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .block__header-icons {
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .block__header-icon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+
+  }
+
+  .icon__tick {
+    background: svg-load(
+    "tick.svg",
+    fill=#00d70a,
+    width=100%,
+    height=100%
+    )
+  }
+
+  .icon__remove {
+    background: svg-load(
+    "remove.svg",
+    fill="#bf2929",
+    stroke-width=20,
+    width=100%,
+    height=100%
+    )
+  }
+
+  .block__footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .field {
+    height: 44px;
+    padding: 10px;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid black;
+  }
+
+  .field__name {
+    width: 275px;
+  }
+
+  .field__skill {
+    width: 216px;
+    margin-right: 10px;
+  }
+
+  .field__percent {
+    width: 73px;
+    margin-right: 30px;
+  }
+
+  .block__content-table {
+    width: 100%;
+  }
+
+  .block__content-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+
+  .block__content-level {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .block__content-icons {
+    width: 60px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .block__content-skill {
+    width: 50%;
+  }
+  .block__content-level {
+    width: 12%;
+  }
+
+  .block__content-pencil {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: svg-load(
+    "pencil.svg",
+    fill="#a0a5b1",
+    stroke-width=20,
+    width=100%,
+    height=100%
+    )
+  }
+  .block__content-bin {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: svg-load(
+    "trash.svg",
+    fill="#a0a5b1",
+    stroke-width=20,
+    width=100%,
+    height=100%
+    )
+  }
 
 </style>

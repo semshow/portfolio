@@ -1,10 +1,12 @@
 script(type="text/x-template")#reviews_template
   .review__content
-    .review__headline-buttons
-      button(type="button" @click="previous()").review__btn.review__btn--prev 
-        +icon('arrow-down','review__btn-arrow')
-      button(type="button" @click="next()").review__btn.review__btn--next 
-        +icon('arrow-down','review__btn-arrow')  
+    .review__headline
+      h2.review__headline-title Что обо мне говорят
+      .review__headline-buttons
+        button(type="button" @click="previous()").review__btn.review__btn--prev 
+          +icon('arrow-down','review__btn-arrow')
+        button(type="button" @click="next()").review__btn.review__btn--next 
+          +icon('arrow-down','review__btn-arrow')  
 
     .review__slider    
       flickity(ref="flickity" :options="flickityOptions") 

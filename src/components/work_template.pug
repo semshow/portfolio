@@ -30,9 +30,9 @@ script(type="text/x-template")#slider-thumbs
   ul.work__slider-block
     li.work__slider-block-item(
       v-for="work in works"
-     :class="{'work__slider__item--active': work.id === currentWork.id}"
+:class="{'work__slider__item--active': work.id === currentWork.id}"
     )
-      a(href="#")
+      button.work__slider-preview-btn
         .work__slider-sliderhover
         img(:src="work.photo" alt="").work__slider-pic
 script(type="text/x-template")#slider-info   

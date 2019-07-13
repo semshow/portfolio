@@ -130,20 +130,13 @@
 .skills__row-content {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .skills__item {
   position: relative;
   display: flex;
   justify-content: center;
-  margin-right: 50px;
-  &:last-child {
-    margin-right: 0;
-  }
-
-  @include desktop {
-    margin-right: 25px;
-  }
 }
 
 .skill__circle-shape {
