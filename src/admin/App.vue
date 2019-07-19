@@ -461,7 +461,7 @@
                   .widget__btns
                     button.widget__btns-link.widget__btns-link-edit Править
                     button.widget__btns-link.widget__btns-link-cancel Удалить
-          form(action="https://webdev-api.loftschool.com/" method="post").auth  
+          form.auth  
             .auth__exit  
               button.auth__exit-icon
             .auth__title Авторизация
@@ -477,6 +477,36 @@
                         
 </template>
 <script>
+var ajaxForm = function(form) {
+  let formData = new FormData()
+  formData.append('name', form.elements.name.value)
+  formData.append('password', form.elements.password.value)
+  let url = 'https://webdev-api.loftschool.com/sendmail'
+  const xhr = new XMLHttpRequest()
+  xhr.responseType = 'json'
+  xhr.open('POST', url)
+  xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest')
+  xhr.send(formData)
+
+  return xhr
+}
+var submitForm = function(e) {
+  e.preventDefault()
+  var form = e.target
+  let request = ajaxForm(form)
+  request.addEventListener('load', () => {
+    if (request.status >= 400) {
+      let content = 'Ошибка соединения с сервером, попробуйте позже'
+      overlay.open('.modal__open', `${content}. Ошибка ${request.status}`)
+    } else {
+      let content = request.response.message
+      overlay.open('.modal__open', content)
+    }
+  })
+}
+
+let myForm = document.querySelector('auth')
+myForm.addEventListener('submit', submitForm)
 export default {}
 </script>
 
@@ -1121,6 +1151,7 @@ export default {}
 }
 
 .auth__input {
+  display: block;
   width: 100%;
   border: 0;
   border-bottom: 1px solid $gray;
@@ -1131,7 +1162,7 @@ export default {}
 }
 
 .auth__input--login:before {
-  content: "alex";
+  content: 'alex';
   position: absolute;
   left: 0;
   top: 0;
@@ -1140,7 +1171,7 @@ export default {}
   background: svg-load('user.svg', fill=black, width=100%, height=100%);
 }
 .auth__input--pass:before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -1153,6 +1184,12 @@ export default {}
   color: $gray;
   opacity: 1;
   font-weight: 600;
+  transition: opacity 0.5s ease;
+}
+
+.auth__input:focus::placeholder {
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .auth__send {
@@ -1165,15 +1202,15 @@ export default {}
   display: block;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg,#006aed,#3f35cb);
+  background: linear-gradient(90deg, #006aed, #3f35cb);
   font-size: 18px;
   color: $white;
   text-transform: uppercase;
   font-weight: 700;
-  border-radius: 50px 12px 50px 12px; 					
-  -moz-border-radius-topleft: 25px; 					
-  -moz-border-radius-topright: 12px; 					
-  -moz-border-radius-bottomleft: 12px; 					
-  -moz-border-radius-bottomright: 25px;  
+  border-radius: 50px 12px 50px 12px;
+  -moz-border-radius-topleft: 25px;
+  -moz-border-radius-topright: 12px;
+  -moz-border-radius-bottomleft: 12px;
+  -moz-border-radius-bottomright: 25px;
 }
 </style>

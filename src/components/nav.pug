@@ -1,10 +1,9 @@
 mixin nav(mod)
   nav(class='main-menu main-menu--'+mod)
     ul.main-menu__list#main-menu__links
-      - var menu = ['Главная','Обо мне', 'Навыки','Работы','Отзывы','Связаться']
-      each item in menu 
+      - var menu = [{name: 'Главная', link: '#'},{ name: 'Обо мне', link: '#about'},{name: 'Навыки',link: '#skills'},{ name: 'Работы', link: '#works'},{ name: 'Отзывы', link: '#reviews'},{name: 'Связаться',link: '#contact'}]
+      each item, index in menu 
         li.main-menu__item
-          a(href="#").main-menu__link= item
-
+          a(href=menu[index].link).main-menu__link= menu[index].name
 
 

@@ -17,6 +17,8 @@ new Vue({
   },
   data: {
     reviews: [],
+    btnIndex: 0,
+    btnClicks: undefined,
     flickityOptions: {
       initialIndex: 0,
       prevNextButtons: false,
