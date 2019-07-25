@@ -1,20 +1,30 @@
-section.contact
+section.contact#contact
   h2.contact__title Связаться со мной
-  form.contact__form
+  form.contact__form.j-form
     .contact__form-header
-      label.contact__block
-        .contact__label-text Введите ваше имя
-        +icon('user','contact__form-icon')
-        input.contact__name(type='text' name='name' placeholder="Ковальчук Дмитрий") 
-      label.contact__block
-        .contact__label-text Введите ваш email
-        +icon('envelope','contact__form-icon')
-        input.contact__name(type='email' name='emal' placeholder="dima@yandex.ru") 
+      .form__block.j-block
+        label.contact__block.contact__block--header.j-name
+          .contact__label-text Введите ваше имя
+          +icon('user','contact__form-icon')
+          input.contact__name(type='text' name='name' placeholder="Ковальчук Дмитрий" required) 
+          .contact__error.j-error
+      .form__block.j-block    
+        label.contact__block.contact__block--header.j-email
+          .contact__label-text Введите ваш email
+          +icon('envelope','contact__form-icon')
+          input.contact__name(type='email' name='email' placeholder="dima@yandex.ru" required) 
+          .contact__error.j-error
     .contact__form-footer
-      div.contact__block
-        .contact__label-text.contact__label-text--textarea Сообщение к письму
-        +icon('message','contact__form-icon contact__form-icon--textarea')
-        textarea.contact__name(name='text')  Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса.
-        
-    button(type="submit").contact__btn Отправить
+      .form__block--textarea.j-block
+        div.contact__block.j-text
+          .contact__label-text.contact__label-text--textarea Сообщение к письму
+          +icon('message','contact__form-icon contact__form-icon--textarea')
+          textarea.contact__name(name='text', typer='text', required)  Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса.
+          .contact__error.j-error
+    button(type="submit").contact__btn.j-submit Отправить
+
+    script(type="text/x-template")#form-popup
+        .popup__overlay
+          .popup__content
+          button.popup__btn-close.contact__btn Закрыть         
     
