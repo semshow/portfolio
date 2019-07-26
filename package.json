@@ -60,6 +60,6 @@
     "signale": "^1.4.0",
     "vue": "^2.6.7",
     "vue-flickity": "^1.1.2",
-    "vue-router": "^3.0.2"
+    "vue-router": "^3.0.7"
   }
 }

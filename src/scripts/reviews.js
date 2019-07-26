@@ -17,15 +17,17 @@ new Vue({
   },
   data: {
     reviews: [],
-    btnIndex: 0,
-    btnClicks: undefined,
     flickityOptions: {
+      freeScroll: true,
+      contain: true,
+      prevNextButtons: false,
       initialIndex: 0,
       prevNextButtons: false,
       pageDots: false,
-      wrapAround: true,
+      wrapAround: false,
       groupCells: 2,
-      draggable: false
+      draggable: false,
+      adaptiveHeight: true
     }
   },
   methods: {
