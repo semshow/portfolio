@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import routes from "@router/routes"
+import routes from "../router/routes"
 
 Vue.use(VueRouter)
 
@@ -10,5 +10,5 @@ router.beforeEach((to, from, next) => {
   next();
 })
 
-export default router({routes, mode: 'history'})
+export default router
 
